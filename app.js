@@ -34,7 +34,6 @@ app.post("/signin", function(req, res) {
     const password = req.body.password;
 
     auth.signInWithEmailAndPassword(email, password).then(cred => {
-        console.log("cred.user.emailVerified", cred.user.emailVerified);
         if (cred.user.emailVerified === true) {
             const userEmail = cred.user.email;
             const userid = cred.user.uid;
